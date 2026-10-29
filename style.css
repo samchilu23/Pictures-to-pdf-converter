@@ -1,0 +1,297 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #3157d5;
+  --dark: #172033;
+  --muted: #667085;
+  --border: #e2e7f0;
+  --background: #f5f7fc;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--dark);
+  background: var(--background);
+  min-height: 100vh;
+}
+
+.topbar {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.secure {
+  color: #17805b;
+  font-size: 13px;
+}
+
+.container {
+  width: min(760px, 92%);
+  margin: 35px auto;
+}
+
+.hero,
+.settings,
+.preview-section {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 26px;
+  margin-bottom: 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 35px 20px;
+}
+
+.icon-box {
+  font-size: 42px;
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-size: clamp(24px, 5vw, 34px);
+  margin-bottom: 12px;
+}
+
+.hero p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.upload-btn,
+.convert-btn,
+.clear-btn {
+  border: none;
+  border-radius: 9px;
+  padding: 13px 19px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.upload-btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  margin: 22px 0 12px;
+}
+
+.upload-btn:hover,
+.convert-btn:hover {
+  background: #2443ae;
+}
+
+.hint {
+  font-size: 12px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.setting-row label {
+  color: #475467;
+  font-size: 14px;
+}
+
+select {
+  padding: 10px;
+  width: 145px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  color: var(--dark);
+}
+
+.preview-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-heading span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.preview {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  padding: 32px 10px;
+  text-align: center;
+  color: var(--muted);
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+}
+
+.empty-icon {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.empty small {
+  display: block;
+  margin-top: 7px;
+}
+
+.photo-card {
+  border: 1px solid var(--border);
+  padding: 8px;
+  border-radius: 10px;
+  min-width: 0;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  background: #f1f3f8;
+  border-radius: 6px;
+}
+
+.photo-name {
+  font-size: 12px;
+  margin: 9px 0;
+  overflow-wrap: anywhere;
+}
+
+.photo-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.photo-actions button {
+  flex: 1;
+  padding: 7px 3px;
+  background: #edf1ff;
+  color: #2547b8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.photo-actions .remove {
+  background: #fff0f0;
+  color: #b42318;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.actions button {
+  flex: 1;
+}
+
+.convert-btn {
+  color: white;
+  background: var(--primary);
+}
+
+.clear-btn {
+  color: #344054;
+  background: #edf0f6;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+#status {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 15px;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 15px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 15px 4%;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .secure {
+    font-size: 11px;
+  }
+
+  .container {
+    margin: 20px auto;
+  }
+
+  .hero,
+  .settings,
+  .preview-section {
+    padding: 19px 14px;
+  }
+
+  .preview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .photo-card img {
+    height: 120px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}
+
+

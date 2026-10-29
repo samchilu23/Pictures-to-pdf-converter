@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert pictures into PDF documents for free.">
+  <title>PicToPDF - Image to PDF Converter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.1/jspdf.umd.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a href="#" class="logo">Pic<span>ToPDF</span></a>
+    <span class="secure">🔒 Private conversion</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="icon-box">📄</div>
+      <h1>Picture to PDF Converter</h1>
+      <p>Turn your pictures into a PDF document in seconds.</p>
+
+      <label for="imageInput" class="upload-btn">
+        + Select Pictures
+      </label>
+      <input id="imageInput" type="file"
+             accept="image/*" multiple hidden>
+
+      <p class="hint">Select JPG, PNG, WEBP and other supported images</p>
+    </section>
+
+    <section class="settings">
+      <h2>PDF settings</h2>
+      <div class="setting-row">
+        <label for="paperSize">Paper size</label>
+        <select id="paperSize">
+          <option value="a4">A4</option>
+          <option value="letter">Letter</option>
+          <option value="legal">Legal</option>
+        </select>
+      </div>
+
+      <div class="setting-row">
+        <label for="orientation">Orientation</label>
+        <select id="orientation">
+          <option value="portrait">Portrait</option>
+          <option value="landscape">Landscape</option>
+        </select>
+      </div>
+
+      <div class="setting-row">
+        <label for="margin">Page margin</label>
+        <select id="margin">
+          <option value="10">Normal</option>
+          <option value="0">No margin</option>
+          <option value="20">Large</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="preview-section">
+      <div class="preview-heading">
+        <h2>Your pictures</h2>
+        <span id="imageCount">0 pictures</span>
+      </div>
+
+      <div id="preview" class="preview">
+        <div class="empty">
+          <div class="empty-icon">🖼️</div>
+          <p>No pictures selected yet.</p>
+          <small>Your selected pictures will appear here.</small>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="clearBtn" class="clear-btn" disabled>
+          Clear all
+        </button>
+        <button id="convertBtn" class="convert-btn" disabled>
+          Convert to PDF ↓
+        </button>
+      </div>
+      <p id="status" role="status"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>PicToPDF · Simple, fast and private.</p>
+    <small>Your pictures stay on your device during conversion.</small>
+  </footer>
+</body>
+</html>
+
